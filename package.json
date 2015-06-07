@@ -22,7 +22,7 @@
     "chai": "~2.1.2",
     "chai-things": "~0.2.0",
     "mocha": "^2.1.0",
-    "signalk-schema": "SignalK/specification"
+    "signalk-schema": "../signalk-specification"
   },
   "repository": {
     "type": "git",
