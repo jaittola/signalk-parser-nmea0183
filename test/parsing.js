@@ -236,3 +236,49 @@ describe('VHW parser; sentence with direction and speed data', function() {
                   "self": "123456789"
                 });
 });
+
+describe('VPW parser; sentence with downwind VMG data', function() {
+  verifyParsing('$IIVPW,-2.43,N,,*29',
+                {
+                  "vessels": {
+                    "123456789": {
+                      "navigation": {
+                        "speedParallelToWind": {
+                          "value": -1.2501003166920803,
+                          "source": {
+                            "label": "signalk-parser-nmea0183",
+                            "type": "NMEA0183",
+                            "src": "VPW"
+                          }
+                        }
+                      },
+                      "mmsi": "123456789"
+                    }
+                  },
+                  "version": 1,
+                  "self": "123456789"
+                });
+});
+
+describe('VPW parser; sentence with upwind VMG data', function() {
+  verifyParsing('$IIVPW,3.26,N,,*06',
+                {
+                  "vessels": {
+                    "123456789": {
+                      "navigation": {
+                        "speedParallelToWind": {
+                          "value": 1.677089313751515,
+                          "source": {
+                            "label": "signalk-parser-nmea0183",
+                            "type": "NMEA0183",
+                            "src": "VPW"
+                          }
+                        }
+                      },
+                      "mmsi": "123456789"
+                    }
+                  },
+                  "version": 1,
+                  "self": "123456789"
+                });
+});
